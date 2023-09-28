@@ -27,11 +27,12 @@ function updateRecords(records, id, prop, value) {
     records[id][prop] = value; // change the value of the prop to the assigned value
   } else if (prop === "tracks" && value !== "") {
     if (!records[id].hasOwnProperty("tracks")) {
-      records[id][prop] = []; // use when the tracks record is the prop
+      records[id][prop] = []; // create a empty array for tracks and use when the tracks is the prop to hold the tracks
     }
     records[id][prop].push(value); // adds the value to the assigned prop
   }
   return records;
 }
 
+console.log(updateRecords(recordCollection, 5439, "artist", "ABBA"));
 console.log(updateRecords(recordCollection, 5439, "tracks", "UYANG"));
